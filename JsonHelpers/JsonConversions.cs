@@ -113,8 +113,8 @@ public static class JsonConversions
         Verify.IsNotNullOrEmpty(json);
 
         var options = prettyPrint
-            ? (safe ? SerializerOptions.PrettyPrint : SerializerOptions.UnsafePrettyPrint)
-            : (safe ? SerializerOptions.Compact : SerializerOptions.UnsafeCompact);
+            ? (safe ? JsoConfigurations.PrettyPrint : JsoConfigurations.UnsafePrettyPrint)
+            : (safe ? JsoConfigurations.Compact : JsoConfigurations.UnsafeCompact);
 
         return JsonSerializer.Deserialize<T>(json, options);
     }

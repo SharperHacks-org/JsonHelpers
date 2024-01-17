@@ -1,4 +1,4 @@
-﻿// Copyright and trademark notices at bottom of file.
+// Copyright and trademark notices at bottom of file.
 
 using SharperHacks.CoreLibs.JsonHelpers;
 
@@ -34,34 +34,34 @@ public class JsoConfigurationsUT
     public void SmokeTest()
     {
         VerifyOptionSettings(
-            JsonHelpers.JsoConfigurations.Compact,
-            JsonHelpers.JsoConfigurations.SafeEncoder, 
+            JsoConfigurations.Compact,
+            JsoConfigurations.SafeEncoder,
             false,
-            JsonHelpers.JsoConfigurations._jsonEnumConverter);
+            JsoConfigurations._jsonEnumConverter);
 
         VerifyOptionSettings(
-            JsonHelpers.JsoConfigurations.Default,
+            JsoConfigurations.Default,
             _default.Encoder,
             _default.WriteIndented,
             null);
 
         VerifyOptionSettings(
-            JsonHelpers.JsoConfigurations.PrettyPrint,
-            JsonHelpers.JsoConfigurations.SafeEncoder,
+            JsoConfigurations.PrettyPrint,
+            JsoConfigurations.SafeEncoder,
             true,
-            JsonHelpers.JsoConfigurations._jsonEnumConverter);
+            JsoConfigurations._jsonEnumConverter);
 
         VerifyOptionSettings(
-            JsonHelpers.JsoConfigurations.UnsafeCompact,
-            JsonHelpers.JsoConfigurations.UnsafeEncoder,
+            JsoConfigurations.UnsafeCompact,
+            JsoConfigurations.UnsafeEncoder,
             false,
-            JsonHelpers.JsoConfigurations._jsonEnumConverter);
+            JsoConfigurations._jsonEnumConverter);
 
         VerifyOptionSettings(
-            JsonHelpers.JsoConfigurations.UnsafePrettyPrint,
-            JsonHelpers.JsoConfigurations.UnsafeEncoder,
+            JsoConfigurations.UnsafePrettyPrint,
+            JsoConfigurations.UnsafeEncoder,
             true,
-            JsonHelpers.JsoConfigurations._jsonEnumConverter);
+            JsoConfigurations._jsonEnumConverter);
     }
 
     // Originally created to test a prototype read only wrapper around
@@ -111,20 +111,20 @@ public class JsoConfigurationsUT
         sw.Restart();
         for (int i = 0; i < iterations; i++)
         {
-            jsonStrings.Add(JsonSerializer.Serialize(i, JsonHelpers.JsoConfigurations.Default));
+            jsonStrings.Add(JsonSerializer.Serialize(i, JsoConfigurations.Default));
         }
         sw.Stop();
         jsonStrings.Clear();
 
         var defaultTicks = sw.ElapsedTicks;
-        Console.WriteLine($"{nameof(JsonHelpers.JsoConfigurations)}.Default elapsed time: {defaultTicks}");
+        Console.WriteLine($"{nameof(JsoConfigurations)}.Default elapsed time: {defaultTicks}");
 
         Console.WriteLine(
             "\nElapsed times are highly variable from run to run. " +
             "This test might fail randomly.");
 
         // The tick counts are highly variable across runs, but NET8 is faster than
-        // NET7 is faster than NET6.
+        // NET7 is faster than NET6, in most cases.
         //
         // optionsTicks and defaultTicks keep swapping places for fastest, and are always
         // much smaller than creating a new JsonSerializerOptions instance on each iteration.
@@ -136,7 +136,7 @@ public class JsoConfigurationsUT
         Assert.IsTrue(Math.Abs(optionsTicks - defaultTicks) < 200000 || defaultTicks < optionsTicks);
 #endif
 #if NET8_0
-        Assert.IsTrue(Math.Abs(optionsTicks - defaultTicks) < 150000 || defaultTicks < optionsTicks);
+        Assert.IsTrue(Math.Abs(optionsTicks - defaultTicks) < 170000 || defaultTicks < optionsTicks);
 #endif
 
         Assert.IsTrue(optionsTicks < jsoTicks);

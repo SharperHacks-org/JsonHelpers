@@ -1,4 +1,4 @@
-﻿// Copyright and trademark notices at bottom of file.
+// Copyright and trademark notices at bottom of file.
 
 using SharperHacks.CoreLibs.JsonHelpers;
 
@@ -37,7 +37,7 @@ public class JsonConverterUT
             {
                 {"One", 1},
                 {"Two", 2},
-                {"Three", "three" }
+                {"Three", "1+2"}
             };
 
         public SimpleRecord Cr1 { get; init; } = _sr1;
@@ -193,7 +193,7 @@ public class JsonConverterUT
     [DataRow(false, true)]
     public void FromJson_ReadsAny_ToJson_Output(bool prettyPrint, bool safe)
     {
-        var jsonString = JsonConversions.ToJson(_sr1, prettyPrint, safe);
+        var jsonString = JsonConversions.ToJsonString(_sr1, prettyPrint, safe);
         var simpleRecord = JsonConversions.FromJson<SimpleRecord>(jsonString);
         Assert.AreEqual(_sr1, simpleRecord);
     }
@@ -223,7 +223,7 @@ public class JsonConverterUT
         bool toJsonPrettyPrint, bool toJsonSafe,
         bool fromJsonPrettyPrint, bool fromJsonSafe)
     {
-        var jsonString = JsonConversions.ToJson(_sr2, toJsonPrettyPrint, toJsonSafe);
+        var jsonString = JsonConversions.ToJsonString(_sr2, toJsonPrettyPrint, toJsonSafe);
         var simpleRecord = JsonConversions.FromJson<SimpleRecord>(
             jsonString, fromJsonPrettyPrint, fromJsonSafe);
         Assert.AreEqual(_sr2, simpleRecord);

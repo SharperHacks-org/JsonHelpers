@@ -1,5 +1,4 @@
-@rem Copyright and license at end of file.
-
+@rem Copyright, licens and trademark notice at end of file.
 @setlocal EnableExtensions
 @set prompt=$G
 
@@ -7,7 +6,7 @@
 @call :SetFQDP _gitDir=%~dp0\.git
 @call :SetFQDP _logDir=%~dp0\.Logs
 
-@set _crl1="// Copyright Joseph W Donahue and Sharper Hacks LLC (US-WA)"
+@set _crl1="// Copyright Joseph W Donahue and Sharper Hacks LLC"
 @set _crl2="// Licensed under the Apache License, Version 2.0"
 
 @set _finalExitCode=0
@@ -36,6 +35,7 @@
 @if /i "%~nx1" equ "assemblyinfo.cs" @exit /b
 @if /i "%~nx1" equ "assemblyattributes.cs" @exit /b
 @if /i "%~nx1" equ "globalsuppressions.cs" @exit /b
+@if /i "%~nx1" equ "usings.cs" @exit /b
 @if /i "%~nx1" equ "globalusings.cs" @exit /b
 @set _finalExitCode=1
 @echo Error: Missing copyright notice in file: %~1
@@ -45,6 +45,7 @@
 @if /i "%~nx1" equ "assemblyinfo.cs" @exit /b
 @if /i "%~nx1" equ "assemblyattributes.cs" @exit /b
 @if /i "%~nx1" equ "globalsuppressions.cs" @exit /b
+@if /i "%~nx1" equ "usings.cs" @exit /b
 @if /i "%~nx1" equ "globalusings.cs" @exit /b
 @set _finalExitCode=1
 @echo Error: Missing license in file: %~1
@@ -71,4 +72,6 @@
 @rem SharperHacks is a trademark of Sharper Hacks LLC (US-Wa), and may not be
 @rem applied to distributions of derivative works, without the express written
 @rem permission of a registered officer of Sharper Hacks LLC (US-WA).
+
+
 

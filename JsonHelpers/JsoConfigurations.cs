@@ -1,4 +1,4 @@
-﻿// Copyright and trademark notices at the end of this file.
+// Copyright and trademark notices at the end of this file.
 
 using System.Runtime.CompilerServices;
 using System.Text.Encodings.Web;
@@ -23,7 +23,6 @@ public static class JsoConfigurations // JsonSerialOptionsConfigurations is too 
 {
     private static object _lock = new object();
 
-    private static TextEncoderSettings? _encoderSettings;
     private static JavaScriptEncoder? _safeEncoder;
     private static JavaScriptEncoder? _unsafeEncoder;
 
@@ -35,10 +34,8 @@ public static class JsoConfigurations // JsonSerialOptionsConfigurations is too 
 
     internal static JsonStringEnumConverter? _jsonEnumConverter;
 
-    private static TextEncoderSettings EncoderSettings => _encoderSettings ??= new TextEncoderSettings(UnicodeRanges.All);
-
-    internal static JavaScriptEncoder SafeEncoder => _safeEncoder ??= JavaScriptEncoder.Create(EncoderSettings);
-    internal static JavaScriptEncoder UnsafeEncoder => _unsafeEncoder ??= JavaScriptEncoder.Create();
+    internal static JavaScriptEncoder SafeEncoder => _safeEncoder ??= JavaScriptEncoder.Default;
+    internal static JavaScriptEncoder UnsafeEncoder => _unsafeEncoder ??= JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
 
     internal static JsonStringEnumConverter JsonEnumConverter => _jsonEnumConverter ??= new();
 
