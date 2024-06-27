@@ -16,7 +16,7 @@ Nuget: https://www.nuget.org/packages/SharperHacks.CoreLibs.JsonHelpers
 
 ### Classes
 
-#### JsoConfiguration
+#### JsonConfiguration
 
 Provides static JsonSerializerOptions instances, lazily initialized for compact 
 and pretty printed Json. All lazy initializers are thread safe.
