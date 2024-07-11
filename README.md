@@ -1,8 +1,8 @@
 ![SharperHacks logo](SHLLC-Logo.jpg)
-# JasonHelpers Library for .NET6+
+# JasonHelpers Library for DotNet.
 ## SharperHacks.CoreLibs.JasonHelpers
 
-Some useful JSON utility bits using System.Text.Json.
+Some useful JSON utility bits wrapping System.Text.Json.
 
 Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE).
 
@@ -11,8 +11,8 @@ Contact: joseph@sharperhacks.org
 Nuget: https://www.nuget.org/packages/SharperHacks.CoreLibs.JsonHelpers
 
 ### Targets
-- net7.0
 - net8.0
+- net9.0
 
 ### Classes
 
