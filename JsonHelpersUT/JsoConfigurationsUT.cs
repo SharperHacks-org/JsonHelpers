@@ -16,7 +16,7 @@ public class JsoConfigurationsUT
 {
     private JsonSerializerOptions _default = new JsonSerializerOptions();
 
-    private void VerifyOptionSettings(
+    private static void VerifyOptionSettings(
         JsonSerializerOptions options,
         JavaScriptEncoder? expectedEncoder,
         bool expectedWriteIndented,
@@ -68,6 +68,7 @@ public class JsoConfigurationsUT
     // JsonSerializerOptions that turned out to be too slow. This should
     // be maintained to detect any major perf regression in SerializerOptions.
     [TestMethod]
+    [SuppressMessage("Performance", "CA1869:Cache and reuse 'JsonSerializerOptions' instances", Justification = "<Pending>")]
     public void PerfTest()
     {
         const int iterations = 100000;
