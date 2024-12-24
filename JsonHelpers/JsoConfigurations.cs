@@ -4,7 +4,6 @@ using System.Runtime.CompilerServices;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Text.Unicode;
 
 [assembly: InternalsVisibleTo("SharperHacks.CoreLibs.JsonHelpers.JsonHelpersUT")]
 namespace SharperHacks.CoreLibs.JsonHelpers;

@@ -1,18 +1,16 @@
 // Copyright and trademark notices at bottom of file.
 
-using SharperHacks.CoreLibs.JsonHelpers;
-
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace SharperHacks.CoreLibs.Telemetry.UnitTests;
+namespace SharperHacks.CoreLibs.JsonHelpers.JsonHelpersUT;
 
 [ExcludeFromCodeCoverage]
 [TestClass]
-public class JsoConfigurationsUT
+public class JsonConfigurationsUT
 {
     private JsonSerializerOptions _default = new JsonSerializerOptions();
 

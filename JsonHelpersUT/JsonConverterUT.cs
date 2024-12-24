@@ -1,11 +1,9 @@
 // Copyright and trademark notices at bottom of file.
 
-using SharperHacks.CoreLibs.JsonHelpers;
-
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace SharperHacks.CoreLibs.Telemetry.UnitTests;
+namespace SharperHacks.CoreLibs.JsonHelpers.JsonHelpersUT;
 
 [ExcludeFromCodeCoverage]
 [TestClass]
