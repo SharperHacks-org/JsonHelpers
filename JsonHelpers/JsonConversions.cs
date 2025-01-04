@@ -9,7 +9,7 @@ namespace SharperHacks.CoreLibs.JsonHelpers;
 // ToDo: Is this class name going to be a problem?
 
 /// <summary>
-/// Static wrappers arount JsonSerializer.Serialize(...) and JsonSerializer.Deserialize(...),
+/// Static wrappers around JsonSerializer.Serialize(...) and JsonSerializer.Deserialize(...),
 /// that apply one of four "standard" SerializerOptions.
 /// </summary>
 public static class JsonConversions
