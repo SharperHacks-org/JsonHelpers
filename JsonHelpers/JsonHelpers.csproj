@@ -68,8 +68,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SharperHacks.CoreLibs.Constraints" Version="4.2.0" />
-    <PackageReference Include="SharperHacks.CoreLibs.Reflection" Version="4.0.3" />
+    <PackageReference Include="SharperHacks.CoreLibs.Constraints" Version="4.3.0" />
+    <PackageReference Include="SharperHacks.CoreLibs.Reflection" Version="4.1.0" />
   </ItemGroup>
 
   <ItemGroup>
