@@ -24,7 +24,7 @@ public class JsonConfigurationsUT
         Assert.AreEqual(expectedWriteIndented, options.WriteIndented);
         if (expectedConverter is not null)
         {
-            Assert.IsTrue(options.Converters.Contains(expectedConverter));
+            Assert.Contains(expectedConverter, options.Converters);
         }
     }
 
@@ -138,8 +138,8 @@ public class JsonConfigurationsUT
         Assert.IsTrue(Math.Abs(optionsTicks - defaultTicks) < 170000 || defaultTicks < optionsTicks);
 #endif
 
-        Assert.IsTrue(optionsTicks < jsoTicks);
-        Assert.IsTrue(defaultTicks < jsoTicks);
+        Assert.IsLessThan(jsoTicks, optionsTicks);
+        Assert.IsLessThan(jsoTicks, defaultTicks);
     }
 }
 

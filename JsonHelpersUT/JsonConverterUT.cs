@@ -175,12 +175,12 @@ public class JsonConverterUT
 
         Console.WriteLine($"String: {json}");
 
-        Assert.IsTrue(json.StartsWith("{\"0\":0,"));
-        Assert.IsTrue(json.Contains("\"1\":1,"));
-        Assert.IsTrue(json.Contains("\"2\":2,"));
-        Assert.IsTrue(json.Contains(",\"SimpleRecord\":{"));
-        Assert.IsTrue(json.Contains("{\"StringValue\":\"SR1\","));
-        Assert.IsTrue(json.EndsWith("IntValue\":41}}"));
+        Assert.StartsWith("{\"0\":0,", json);
+        Assert.Contains("\"1\":1,", json);
+        Assert.Contains("\"2\":2,", json);
+        Assert.Contains(",\"SimpleRecord\":{", json);
+        Assert.Contains("{\"StringValue\":\"SR1\",", json);
+        Assert.EndsWith("IntValue\":41}}", json);
     }
 
 #if false // Turns out the options don't seem to appreciably affect the deserializer.
