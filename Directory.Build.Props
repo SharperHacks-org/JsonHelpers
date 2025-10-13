@@ -7,10 +7,16 @@
 
   <PropertyGroup>
     <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
-    <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Deterministic>true</Deterministic>
-    <PathMap>$(SolutionDir)={SHLLC/CoreLibs/$(MSBuildSolutionName)}/</PathMap>
+    <PathMapRoot>SHLLC/CoreLibs</PathMapRoot>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <BaseTargetFrameworks>net8.0;net9.0</BaseTargetFrameworks>
+    <VS2022TargetFrameWorks>net10.0</VS2022TargetFrameWorks>
+    <ExtraTargetFramework Condition="'$(VisualStudioVersion)' >= '18.0'">net10.0</ExtraTargetFramework>
+    <TargetFrameworks>$(BaseTargetFrameworks);$(VS2022TargetFrameWorks)</TargetFrameworks>
   </PropertyGroup>
 </Project>

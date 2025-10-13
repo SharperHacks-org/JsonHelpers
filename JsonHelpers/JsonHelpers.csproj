@@ -9,6 +9,7 @@
     <AssemblyVersion>0.0.0.0</AssemblyVersion>
     <FileVersion>0.0.0.0</FileVersion>
     <Title>$(AssemblyName)</Title>
+    <TargetFrameworks>$(TargetFrameworks)</TargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Deterministic)' == 'true' And '$(PathMap)' == ''">
@@ -65,8 +66,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SharperHacks.CoreLibs.Constraints" Version="5.0.2" />
-    <PackageReference Include="SharperHacks.CoreLibs.Reflection" Version="5.1.2" />
+    <PackageReference Include="SharperHacks.CoreLibs.Constraints" Version="5.0.3" />
+    <PackageReference Include="SharperHacks.CoreLibs.Reflection" Version="5.1.4" />
   </ItemGroup>
 
   <ItemGroup>
