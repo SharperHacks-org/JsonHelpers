@@ -67,7 +67,7 @@
 
   <ItemGroup>
     <PackageReference Include="SharperHacks.CoreLibs.Constraints" Version="5.1.0" />
-    <PackageReference Include="SharperHacks.CoreLibs.Reflection" Version="5.1.4" />
+    <PackageReference Include="SharperHacks.CoreLibs.Reflection" Version="5.1.5" />
   </ItemGroup>
 
   <ItemGroup>
