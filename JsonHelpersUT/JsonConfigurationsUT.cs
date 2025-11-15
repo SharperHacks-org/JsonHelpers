@@ -128,15 +128,7 @@ public class JsonConfigurationsUT
         // optionsTicks and defaultTicks keep swapping places for fastest, and are always
         // much smaller than creating a new JsonSerializerOptions instance on each iteration.
         // Under the hood, they are essentially the same, so that is expected.
-#if NET6_0
-        Assert.IsTrue(Math.Abs(optionsTicks - defaultTicks) < 300000 || defaultTicks < optionsTicks);
-#endif
-#if NET7_0
-        Assert.IsTrue(Math.Abs(optionsTicks - defaultTicks) < 200000 || defaultTicks < optionsTicks);
-#endif
-#if NET8_0
         Assert.IsTrue(Math.Abs(optionsTicks - defaultTicks) < 170000 || defaultTicks < optionsTicks);
-#endif
 
         Assert.IsLessThan(jsoTicks, optionsTicks);
         Assert.IsLessThan(jsoTicks, defaultTicks);

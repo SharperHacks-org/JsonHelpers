@@ -36,7 +36,21 @@ public static class JsoConfigurations // JsonSerialOptionsConfigurations is too 
     internal static JavaScriptEncoder SafeEncoder => _safeEncoder ??= JavaScriptEncoder.Default;
     internal static JavaScriptEncoder UnsafeEncoder => _unsafeEncoder ??= JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
 
-    internal static JsonStringEnumConverter JsonEnumConverter => _jsonEnumConverter ??= new();
+    internal static JsonStringEnumConverter JsonEnumConverter
+    {
+        get
+        {
+            if (_jsonEnumConverter is null)
+            {
+                lock (_lock)
+                {
+                    _jsonEnumConverter ??= new();
+                }
+            }
+
+            return _jsonEnumConverter;
+        }
+    }
 
     /// <summary>
     /// Creates or returns JsonSerializerOptions and TextEncoderSettings

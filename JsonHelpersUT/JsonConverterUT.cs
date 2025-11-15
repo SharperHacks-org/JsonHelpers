@@ -2,6 +2,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace SharperHacks.CoreLibs.JsonHelpers.JsonHelpersUT;
 
@@ -11,7 +12,14 @@ public class JsonConverterUT
 {
     public record SimpleRecord
     {
+        public enum Xyz { eX, eY, eZ };
+
         public string StringValue { get; init; }
+
+        public bool BoolValue { get; set; }
+
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        public Xyz XyzValue { get; set; }
 
         public int IntValue { get; init; }
 
@@ -22,7 +30,7 @@ public class JsonConverterUT
         }
     }
 
-    internal static SimpleRecord _sr1 = new("SR1", 41);
+    internal static SimpleRecord _sr1 = new("SR1", 41) { XyzValue = SimpleRecord.Xyz.eZ };
 
     internal static SimpleRecord _sr2 = new("SR2", 43);
 

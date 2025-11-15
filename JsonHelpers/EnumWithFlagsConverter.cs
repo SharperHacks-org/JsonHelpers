@@ -7,36 +7,6 @@ using System.Text.Json.Serialization;
 
 namespace SharperHacks.CoreLibs.JsonHelpers;
 
-#if false // ToDo: Find out why this isn't needed.
-/// <summary>
-/// JSON serialization factory for `[Flags]` based `enum's` as `string[]`
-/// </summary>
-/// <see href="https://stackoverflow.com/a/59430729/5219886">based on this model</see>
-public class EnumWithFlagsJsonConverterFactory : JsonConverterFactory
-{
-    /// <summary>
-    /// Constructor
-    /// </summary>
-    public EnumWithFlagsJsonConverterFactory() { }
-
-    /// <inheritdoc/>
-    public override bool CanConvert(Type typeToConvert)
-    {
-        // https://github.com/dotnet/runtime/issues/42602#issue-706711292
-        return typeToConvert.IsEnum && typeToConvert.IsDefined(typeof(FlagsAttribute), false);
-    }
-
-    /// <inheritdoc/>
-    public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
-    {
-        var converterType = typeof(EnumWithFlagsJsonConverter<>).MakeGenericType(typeToConvert);
-        var result = (JsonConverter?)Activator.CreateInstance(converterType);
-        Verify.IsNotNull(result);
-        return result;
-    }
-}
-#endif
-
 /// <summary>
 /// JSON serialization for `[Flags]` based `enum's` as `string[]`
 /// </summary>
