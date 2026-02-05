@@ -21,7 +21,7 @@
     <EnableNETAnalyzers>True</EnableNETAnalyzers>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <IncludeSymbols>True</IncludeSymbols>
-    <PackageIcon>SHLLC-Logo.128.100.jpg</PackageIcon>
+    <PackageIcon>SHLLC-Logo.128.100.png</PackageIcon>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/SharperHacks-org/$(MSBuildProjectName)</PackageProjectUrl>
     <PackageReadMeFile>README.md</PackageReadMeFile>
@@ -67,7 +67,7 @@
 
   <ItemGroup>
     <PackageReference Include="SharperHacks.CoreLibs.Constraints" Version="5.1.0" />
-    <PackageReference Include="SharperHacks.CoreLibs.Reflection" Version="5.1.5" />
+    <PackageReference Include="SharperHacks.CoreLibs.Reflection" Version="5.1.6" />
   </ItemGroup>
 
   <ItemGroup>
@@ -83,8 +83,8 @@
       <PackagePath>\</PackagePath>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="$(SolutionDir)*.jpg" Pack="true" PackagePath="\" />
-    <None Update="$(SolutionDir)*.jpg">
+    <None Include="$(SolutionDir)*.png" Pack="true" PackagePath="\" />
+    <None Update="$(SolutionDir)*.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
