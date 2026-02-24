@@ -1,5 +1,7 @@
 ![SharperHacks logo](https://raw.githubusercontent.com/SharperHacks-org/Assets/main/Images/SHLLC-Logo.png)
-# JasonHelpers Library for DotNet.
+# THIS PROJECT MOVED TO [codeberg.org](https://codeberg.org/SharperHacks-org/JsonHelpers).
+# THIS REPO WILL BE REMOVED SOON.
+## JasonHelpers Library for DotNet.
 ## SharperHacks.CoreLibs.JasonHelpers
 
 Some useful JSON utility bits wrapping System.Text.Json.
@@ -70,6 +72,7 @@ that apply one of the four "standard" SerializerOptions provided by JsoConfigura
   /// Create instance of T from JSON Span{byte}.
   public static T? FromJson<T>(Span<byte> utf8json)
 ```
+
 
 
 
